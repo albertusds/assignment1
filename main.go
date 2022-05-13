@@ -18,10 +18,7 @@ func main() {
 		//load data
 		LoadDataset()
 
-		students := models.GetAllStudents()
-		// fmt.Println(students)
-
-		result, err := models.GetStudentInfo(args, students)
+		result, err := models.GetStudentInfo(args)
 
 		if err != nil {
 			fmt.Println(err)
@@ -33,9 +30,22 @@ func main() {
 
 func LoadDataset() {
 	datasets := [][]string{
-		{"1", "dwi", "jakarta", "dev", "learning 1"},
-		{"2", "albert", "bogor", "qa", "learning 2"},
-		{"3", "septianto", "depok", "ui", "learning 3"},
+		{"1", "M. Arsyad R", "Jakarta", "Backend Engineer", "learning new things"},
+		{"2", "Tiara D", "Bogor", "Backend Engineer", "learn new programming language"},
+		{"3", "Juni Dio K", "Depok", "Backend Engineer", "upgrade skills"},
+		{"4", "Tasrifin", "Tangerang", "Backend Engineer", "llearn new programming language"},
+		{"5", "Adhitya Febhiakbar", "Jakarta", "Backend Engineer", "upgrade skills"},
+		{"6", "Esra Delima M", "Bogor", "Backend Engineer", "upgrade skills"},
+		{"7", "M. Avtara", "Depok", "Backend Engineer", "learn new programming language"},
+		{"8", "Hamonangan S", "Depok", "Backend Engineer", "upgrade skills"},
+		{"9", "Julius M", "Bogor", "Backend Engineer", "learning new things"},
+		{"10", "Indra Bayu S", "Tangerang", "Backend Engineer", "learning new things"},
+		{"11", "Philip Bryan H", "Jakarta", "Backend Engineer", "learn new programming language"},
+		{"12", "Teguh Ainul D", "Jakarta", "Backend Engineer", "upgrade skills"},
+		{"13", "Saut Raja M T", "Depok", "Backend Engineer", "learn new programming language"},
+		{"14", "Putra Irawan", "Depok", "Backend Engineer", "learning new things"},
+		{"15", "Albertus Dwi S", "Bogor", "Backend Engineer", "learning new things"},
+		{"16", "Dhany Putra", "Tangerang", "Backend Engineer", "upgrade skills"},
 	}
 
 	for _, dataset := range datasets {

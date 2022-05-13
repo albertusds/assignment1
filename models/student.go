@@ -15,9 +15,9 @@ type Student struct {
 
 var students = []Student{}
 
-func GetStudentInfo(id string, students []Student) (Student, error) {
+func GetStudentInfo(id string) (Student, error) {
 	idConverted, _ := strconv.Atoi(id)
-	if idConverted <= 0 {
+	if idConverted <= 0 || idConverted > len(students) {
 		return Student{}, fmt.Errorf("[ERROR] id = %d is not found. please use another id", idConverted)
 	}
 	return students[idConverted-1], nil
@@ -31,8 +31,4 @@ func AddNewStudent(id string, name string, address string, work string, reason s
 		Work:    work,
 		Reason:  reason,
 	})
-}
-
-func GetAllStudents() []Student {
-	return students
 }
