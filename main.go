@@ -18,6 +18,7 @@ func main() {
 		//load data
 		LoadDataset()
 
+		//get student info
 		result, err := models.GetStudentInfo(args)
 
 		if err != nil {
